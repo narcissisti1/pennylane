@@ -114,6 +114,8 @@ class PauliX(Observable, Operation):
     num_params = 0
     num_wires = 1
     par_domain = None
+    matrix = np.array([[0, 1], [1, 0]], dtype=complex)
+    eig = [np.array([1., -1.]), 1/np.sqrt(2)*np.array([[1, 1], [1, -1]], dtype=complex)]
 
 
 class PauliY(Observable, Operation):
@@ -133,6 +135,8 @@ class PauliY(Observable, Operation):
     num_params = 0
     num_wires = 1
     par_domain = None
+    matrix = np.array([[0, -1.j], [1.j, 0]], dtype=complex)
+    eig = [np.array([1., -1.]), 1/np.sqrt(2)*np.array([[1, 1.j], [1, -1.j]], dtype=complex)]
 
 
 class PauliZ(Observable, Operation):
@@ -152,7 +156,8 @@ class PauliZ(Observable, Operation):
     num_params = 0
     num_wires = 1
     par_domain = None
-
+    matrix = np.array([[1, 0], [0, -1]], dtype=complex)
+    eig = [np.array([1., -1.]), np.array([[1, 0], [0, 1]], dtype=complex)]
 
 class S(Operation):
     r"""S(wires)
